@@ -480,15 +480,225 @@
 // != inqeualityy operator (compares if values are not equal)
 // !== strict inequality operator (compares if values and datatypes are not equal)
 
-const PI = 3.14;
-if (PI == "3.14") {
-  console.log("That is PI");
-} else {
-  console.log("That is not PI");
-}
-const PI = 3.14;
-if (PI === 3.14) {
-  console.log("That is PI");
-} else {
-  console.log("That is not PI");
-}
+// const PI = 3.14;
+// if (PI == "3.14") { //works with == . wont work with ===)
+//   console.log("That is PI");
+// } else {
+//   console.log("That is not PI");
+// }
+// const PI = 3.14;
+// if (PI === 3.14) {
+//   //works since its the specified Number
+//   console.log("That is PI");
+// } else {
+//   console.log("That is not PI");
+// }
+// const PI = 3.14;
+// if (PI !== "3.14") {
+//   console.log("That is not PI");
+// } else {
+//   console.log("That is PI");
+// }
+//  while loop = repeat some code WHILE some condition is true
+// let username = "";
+// while (username === "") {
+//   console.log("Please enter your username");
+// }
+// console.log(`Hello ${username}!`);
+//  in this example program gets stuck in the loop even after you write your username
+
+// let username = "";
+// while (username === "") {
+//   username = window.prompt("Please enter your username: ");
+// }
+// console.log(`Hello ${username}!`);
+// prompt wont go away until the user enters something
+// Username will equal null if the cancel button is pressed
+// let username = "";
+// while (username === "" || username === null) {
+//   username = window.prompt("Please enter your username: ");
+// }
+// console.log(`Hello ${username}!`);
+// canceling the prompt will make it reappeare until user enters something
+// let username;
+// do {
+//   username = window.prompt("Please enter your username: ");
+// } while (username === "" || username === null);
+// console.log(`Hello ${username}!`);
+
+// let loggedIn = false;
+// let username;
+// let password;
+// while (!loggedIn) {
+//   username = window.prompt(`Please enter your username`);
+//   password = window.prompt(`Please enter your password`);
+
+//   if (username === "myU" && password === "myP") {
+//     loggedIn = true;
+//     console.log("Your are logged in successfully");
+//   } else {
+//     console.log("Invalid Credentials! Try again!");
+//   }
+// }
+// let loggedIn = false;
+// let username;
+// let password;
+// do {
+//   username = window.prompt(`Please enter your username`);
+//   password = window.prompt(`Please enter your password`);
+
+//   if (username === "myU" && password === "myP") {
+//     loggedIn = true;
+//     console.log("Your are logged in successfully");
+//   } else {
+//     console.log("Invalid Credentials! Try again!");
+//   }
+// } while (!loggedIn);
+
+// for loop = repeat some code for a LIMITED number of times
+// for (let i = 10; i > 0; i--) {
+//   console.log(i);
+// }
+// console.log("Happy new Year!");
+// for (let i = 1; i <= 20; i++) {
+//   if (i == 13) {
+//     continue; // skips specified number
+//     // break; // breaks out of the loop
+//   } else {
+//     console.log(i);
+//   }
+// }
+// function = A section of reusable Code.
+// Declare the code once, then use it whenever needed by calling the function.
+// function happyBirthday(username, age) {
+//   console.log("Happy Birthday to you!!");
+//   console.log("Happy Birthday to you!!");
+//   console.log(`Happy Birthday dear ${username}!!`);
+//   console.log("Happy Birthday to you!!");
+//   console.log(`You are ${age} years old`);
+// }
+// happyBirthday("John", 30);
+// happyBirthday("Spongebob", 20);
+// happyBirthday("Patrick", 19);
+// function add(x, y) {
+//   // let result = x + y;
+//   // return result;
+//   return x + y;
+// }
+// function subtract(x, y) {
+//   return x - y;
+// }
+// function multiply(x, y) {
+//   return x * y;
+// }
+// function divide(x, y) {
+//   return x / y;
+// }
+// // let answer = add(2, 3);
+// // let answer = subtract(2, 3);
+// // let answer = multiply(2, 3);
+// let answer = divide(2, 3);
+// console.log(answer);
+// function isEven(number) {
+//   // if (number % 2 === 0) {
+//   //   return true;
+//   // } else {
+//   //   return false;
+//   // }
+//   return number % 2 === 0 ? true : false;
+// }
+// console.log(isEven(14));
+// function isValidEmail(email) {
+//   // if (email.includes("@")) {
+//   //   return true;
+//   // } else {
+//   //   return false;
+//   // }
+//   return email.includes("@") ? true : false;
+// }
+// console.log(isValidEmail("hello@mail.com"));
+// console.log(isValidEmail("ElonMusk.com"));
+// console.log(isValidEmail("Zuckerborg@Meta.com"));
+
+// variable scope is where a variable is recognized and accessible (local vs global)
+// Local = inside the function
+// Global = outside of the function
+// array = a variable structure than can hold more than one value
+
+// let fruits = ["apple", "banana", "orange", "coconut"];
+//fruits[1] = "coconut";
+// fruits.push("coconut"); // adds a value to the end of the array
+// fruits.pop(); //remove the value from the end of the array
+// fruits.unshift("mango"); // adds a value to the beginning of the array
+// fruits.shift(); //remove the value from the beginning of the array
+// console.log(fruits);
+// console.log(fruits[0]);
+// console.log(fruits[1]);
+// console.log(fruits[2]);
+// let numOfFruits = fruits.length;
+// let index = fruits.indexOf("apple");
+// console.log(index);
+// fruits.sort().reverse();
+// for (let i = 0; i < fruits.length; i++) {
+//   console.log(fruits[i]);
+// }
+
+// spread operator = ... allows an iterable such as an array to be expanded into seperate elements (unpacks)
+// let numbers = [1, 2, 3, 4, 5];
+// let maximum = Math.max(...numbers);
+// let minimum = Math.min(...numbers);
+// console.log(maximum);
+// console.log(minimum);
+// let username = "John Doe";
+// let letters = [...username].join("-");
+// console.log(letters);
+// let fruits = ["apple", "banana", "orange"];
+// let vegetables = ["carrots", "celery", "potatoes"];
+
+// let foods = [...fruits, ...vegetables, "eggs", "milk"];
+// console.log(foods);
+
+// function openFridge(...foods) {
+//   console.log(...foods);
+// }
+// function getFood(...foods) {
+//   return foods;
+// }
+
+// rest parameters = (...rest) allow a function to work with a variable number of arguements by bundling them into an array
+// spread = expands an array into seperate elements
+// rest = bundles seperate elements into an array
+// const food1 = "pizza";
+// const food2 = "hamburger";
+// const food3 = "hotdog";
+// const food4 = "sushi";
+// const food5 = "ramen";
+// openFridge(food1, food2, food3, food4, food5);
+// const foods = getFood(food1, food2, food3, food4, food5);
+// console.log(foods);
+
+// function sum(...numbers) {
+//   let result = 0;
+//   for (let number of numbers) {
+//     result += number;
+//   }
+//   return result;
+// }
+// const total = sum(1, 2, 3, 4, 5);
+// console.log(`Your total is $${total}`);
+
+// function getAverage(...numbers) {
+//   let result = 0;
+//   for (let number of numbers) {
+//     result += number;
+//   }
+//   return result / numbers.length;
+// }
+// const total = getAverage(75, 100, 85, 90, 50);
+// console.log(`Your average is ${total}`);
+
+// function combineStrings(...strings) {
+//   return strings.join(" ");
+// }
+// const fullname = combineStrings("Mr.", "Spongebob", "Squarepants", "III");
+// console.log(fullname);
