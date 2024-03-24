@@ -31,11 +31,11 @@ function generatePassword(
   return password;
 }
 
-const passwordLength = 50;
-const includeLowercase = true;
-const includeUppercase = true;
-const inclueNumbers = true;
-const includeSymbols = true;
+const passwordLength = 100;
+const includeLowercase = false;
+const includeUppercase = false;
+const inclueNumbers = false;
+const includeSymbols = false;
 
 const password = generatePassword(
   passwordLength,

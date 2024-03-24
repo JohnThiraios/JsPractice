@@ -1,0 +1,21 @@
+html {
+  text-align: center;
+}
+
+button {
+  font-size: 1.5em;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+}
+
+#green {
+  background-color: green;
+}
+#red {
+  background-color: red;
+}
+#blue {
+  background-color: blue;
+}
