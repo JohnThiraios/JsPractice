@@ -1,6 +1,7 @@
 body {
   font-family: Verdana;
   font-size: 2em;
+  background-color: rgb(66, 66, 66);
 }
 #mySubmit {
   font-size: 1em;

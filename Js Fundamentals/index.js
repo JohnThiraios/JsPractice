@@ -702,3 +702,352 @@
 // }
 // const fullname = combineStrings("Mr.", "Spongebob", "Squarepants", "III");
 // console.log(fullname);
+
+// Callback = a function that is passed as an argument to another function.
+// used to handle asynchronous operations such as:
+// 1) Reading a file
+// 2) Network Requests
+// 3) Interacting with databases
+// When one operation is complete, the callback function is called.
+
+// hello();
+// goodbye();
+// function hello() {
+//   setTimeout(function () {
+//     console.log("Hello World!");
+//   }, 3000); //delays the function for 3 seconds
+// }
+// function goodbye() {
+//   console.log("Goodbye World!");
+// }
+// hello(leave);
+// function hello(callback) {
+//   console.log("Hello World!");
+//   callback();
+// }
+// function leave() {
+//   console.log("Leave!");
+// }
+// sum(displayPage, 1, 2);
+
+// function sum(callback, x, y) {
+//   let result = x + y;
+//   callback(result);
+// }
+
+// function displayConsole(result) {
+//   console.log(result);
+// }
+// function displayPage(result) {
+//   document.getElementById("myH1").textContent = result;
+// }
+// forEach() = method used to iterate over the elements
+//  of an array and apply a specified function (callback) to each element.
+// let numbers = [1, 2, 3, 4, 5];
+// numbers.forEach(cube);
+// numbers.forEach(display);
+// function double(element, index, array) {
+//   array[index] = element * 2;
+// }
+// function triple(element, index, array) {
+//   array[index] = element * 3;
+// }
+// function square(element, index, array) {
+//   array[index] = element * element;
+//   // array[index] = Math.pow(element, 2);
+// }
+// function cube(element, index, array) {
+//   array[index] = element * element * element;
+//   // array[index] = Math.pow(element, 3);
+// }
+// function display(element) {
+//   console.log(element);
+// }
+
+// let fruits = ["apple", "banana", "orange", "coconut"];
+// fruits.forEach(capitalize);
+// fruits.forEach(display);
+// function upperCase(element, index, array) {
+//   array[index] = element.toUpperCase();
+// }
+// function lowerCase(element, index, array) {
+//   array[index] = element.toLowerCase();
+// }
+// function capitalize(element, index, array) {
+//   array[index] = element.charAt(0).toUpperCase() + element.slice(1);
+// }
+// function display(element) {
+//   console.log(element);
+// }
+
+// .map() = accepts a callback and applies it to each element of an array
+// then it returns a new array with the results of the callback
+
+// const numbers = [1, 2, 3, 4, 5];
+// const squares = numbers.map(square);
+// const cubes = numbers.map(cube);
+
+// function square(element) {
+//   // return number * number;
+//   return Math.pow(element, 2);
+// }
+// function cube(element) {
+//   return Math.pow(element, 3);
+// }
+// console.log(squares);
+// console.log(cubes);
+
+// const students = ["Spongebob", "Patrick", "Squidward", "Sandy"];
+// const studentsUpper = students.map(upperCase);
+// function upperCase(element) {
+//   return element.toUpperCase();
+// }
+// console.log(studentsUpper);
+
+// const dates = ["2024-1-10", "2025-2-25", "2022-11-9"];
+// const formattedDates = dates.map(formatDate);
+// function formatDate(element) {
+//   const parts = element.split("-");
+//   return `${parts[2]}-${parts[1]}-${parts[0]}`;
+// }
+// console.log(formattedDates);
+
+// .filter() = creates a new array with all elements that pass a test
+// let numbers = [1, 2, 3, 4, 5, 6, 7];
+// let evenNums = numbers.filter(isEven);
+// let oddNums = numbers.filter(isOdd);
+// function isEven(element) {
+//   return element % 2 === 0;
+// }
+// function isOdd(element) {
+//   return element % 2 !== 0;
+// }
+// console.log(oddNums);
+// console.log(evenNums);
+
+// const ages = [16, 17, 18, 19, 20, 21, 25, 40, 50];
+// const adults = ages.filter(isAdult);
+// const children = ages.filter(isChild);
+// function isAdult(element) {
+//   return element >= 18;
+// }
+// function isChild(element) {
+//   return element < 18;
+// }
+// console.log(adults);
+// console.log(children);
+
+// const words = ["apple", "banana", "orange", "coconut", "kiwi"];
+// const shortWords = words.filter(getShortWords);
+// const longwords = words.filter(getLongWords);
+// function getShortWords(element) {
+//   return element.length <= 6;
+// }
+// function getLongWords(element) {
+//   return element.length > 6;
+// }
+// console.log(shortWords);
+// console.log(longwords);
+
+// .reduce = reduce the elements in an array to a single value
+
+// const prices = [100, 200, 30, 35, 40, 50];
+// const total = prices.reduce(sum);
+// function sum(previous, next) {
+//   return previous + next;
+// }
+// console.log(`$${total.toFixed(2)}`);
+
+// const grades = [75, 50, 90, 80, 80, 70, 85];
+// const max = grades.reduce(getMax);
+// const min = grades.reduce(getMin);
+// function getMax(accumulator, next) {
+//   return Math.max(accumulator, next);
+// }
+// function getMin(accumulator, next) {
+//   return Math.min(accumulator, next);
+// }
+// console.log(max);
+// console.log(min);
+
+// function expression = a way to define functions as values or variables
+// Used for stuff such us Callbacks in asynchronous operations, higher order functions, closures, event listeners, etc.
+// const hello = function () {
+//   console.log("Hello World!");
+// };
+// hello();
+// setTimeout(function () {
+//   console.log("Hello World!");
+// }, 3000);
+
+// function declaration
+// const numbers = [1, 2, 3, 4, 5, 6];
+// const squares = numbers.map(square);
+// console.log(squares);
+// function square(element) {
+//   return Math.pow(element, 2);
+// }
+// function expression
+// const numbers = [1, 2, 3, 4, 5, 6];
+// const squares = numbers.map(function (element) {
+//   return Math.pow(element, 2);
+// });
+// console.log(squares);
+// const cubes = numbers.map(function (element) {
+//   return Math.pow(element, 3);
+// });
+// console.log(cubes);
+
+// const evenNums = numbers.filter(function (element) {
+//   return element % 2 === 0;
+// });
+// console.log(evenNums);
+// const oddNums = numbers.filter(function (element) {
+//   return element % 2 !== 0;
+// });
+// console.log(oddNums);
+// const total = numbers.reduce(function (accumulator, next) {
+//   return accumulator + next;
+// });
+// console.log(total);
+
+// arrow functions => a concise way to write a function expression
+//  good for simple functions that you only use once
+// (parameter) => code
+
+// const hello = (name, age) => {
+//   console.log(`Hello ${name}`);
+//   console.log(`You are ${age} years old`);
+// };
+// hello("Bro", 31);
+
+// setTimeout(function () {
+//   console.log("Hello World!");
+// }, 2000);
+// setTimeout(() => console.log("Hello World!"), 2000);
+
+// const numbers = [1, 2, 3, 4, 5, 6];
+// const squares = numbers.map((element) => Math.pow(element, 2));
+// const cubes = numbers.map((element) => Math.pow(element, 3));
+// const evenNums = numbers.filter((element) => element % 2 === 0);
+// const oddNums = numbers.filter((element) => element % 2 !== 0);
+// const total = numbers.reduce((accumulator, next) => accumulator + next);
+// console.log(squares);
+// console.log(cubes);
+// console.log(evenNums);
+// console.log(oddNums);
+// console.log(total);
+
+// Object = a collection of related properties and/or methods
+// Can represent real world objects such as users, products, etc.
+// object = {key:value, function()}
+// const person1 = {
+//   firstName: "Spongebob",
+//   lastName: "Squarepanths",
+//   age: 30,
+//   isEmployed: true,
+//   sayHello: function () {
+//     console.log("Hi! I am Spongebob!");
+//   },
+//   eat: function () {
+//     console.log("I eat crabby patties!");
+//   },
+// };
+// const person2 = {
+//   firstName: "Patrick",
+//   lastName: "Star",
+//   age: 25,
+//   isEmployed: false,
+//   sayHello: () => console.log("Hey, I'm Patrick..."),
+//   eat: () => console.log("I eat pizza!"),
+// };
+// console.log(person1.firstName);
+// console.log(person1.lastName);
+// console.log(person1.age);
+// console.log(person1.isEmployed);
+// person1.sayHello();
+// person1.eat();
+// console.log(person2.firstName);
+// console.log(person2.lastName);
+// console.log(person2.age);
+// console.log(person2.isEmployed);
+// person2.sayHello();
+// person2.eat();
+
+// this = reference to the object where THIS is used
+// the object depends on the immediate context
+// person.name = this.name;
+// this. doesnt work with arrow functions
+
+// const person1 = {
+//   name: "Spongebob",
+//   favFood: "hamburgers",
+//   sayHello: function () {
+//     console.log(`Hi! I am ${this.name}`);
+//   },
+//   eat: function () {
+//     console.log(`${this.name} is eating ${this.favFood}!`);
+//   },
+// };
+// person1.sayHello();
+// person1.eat();
+
+// const person2 = {
+//   name: "Patrick",
+//   favFood: "Pizza",
+//   sayHello: function () {
+//     console.log(`Hi! I am ${this.name}`);
+//   },
+//   eat: function () {
+//     console.log(`${this.name} is eating ${this.favFood}!`);
+//   },
+// };
+// person2.sayHello();
+// person2.eat();
+
+// constructor = special method for defining the properties and methods of objects
+// function Car(make, model, year, color) {
+//   this.make = make;
+//   this.model = model;
+//   this.year = year;
+//   this.color = color;
+//   this.drive = function () {
+//     console.log(`You drive the ${this.model}`);
+//   };
+// }
+// const car1 = new Car("Honda", "Civic", 2019, "Blue");
+// const car2 = new Car("Toyota", "Corolla", 2020, "red");
+// const car3 = new Car("Dodge", "Ram", 2020, "black");
+// console.log(car1.make);
+// console.log(car1.model);
+// console.log(car1.year);
+// console.log(car1.color);
+// car1.drive();
+// car2.drive();
+// car3.drive();
+
+// class = (ES6 Feature) Provides a more structured way to work with objects compared to traditional constructor functions
+// ex. static keyword, encapsulation, inheritance
+
+// class Product {
+//   constructor(name, price) {
+//     this.name = name;
+//     this.price = price;
+//   }
+//   displayProduct() {
+//     console.log(`Product: ${this.name}`);
+//     console.log(`Price: $${this.price.toFixed(2)}`);
+//   }
+//   calculateTotal(salesTax) {
+//     return this.price + this.price * salesTax;
+//   }
+// }
+// const salesTax = 0.05;
+// const product1 = new Product("Shirt", 40);
+// const product2 = new Product("Pants", 60);
+// const product3 = new Product("Pants", 25);
+// product1.displayProduct();
+// product2.displayProduct();
+// product3.displayProduct();
+// const total = product3.calculateTotal(salesTax);
+// console.log(`Total price (with tax): $${total.toFixed(2)}`);

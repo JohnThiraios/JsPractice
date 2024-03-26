@@ -1,0 +1,25 @@
+body {
+  text-align: center;
+  background-color: rgb(100, 100, 100);
+}
+button {
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: rgb(52, 134, 52);
+  border: none;
+  padding: 5px;
+}
+
+#svg {
+  text-align: center;
+  font-size: 15px;
+  border-radius: 50px;
+  background-color: red;
+}
+
+#itemInput {
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  text-align: center;
+}
