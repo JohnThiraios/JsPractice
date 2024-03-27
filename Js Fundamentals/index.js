@@ -1051,3 +1051,536 @@
 // product3.displayProduct();
 // const total = product3.calculateTotal(salesTax);
 // console.log(`Total price (with tax): $${total.toFixed(2)}`);
+
+// static = keyword that defines properties or methods that belong to a class itself rather than the objects created from that class.
+// class owns anything static, not the objects.
+// class MathUtil {
+//   static PI = 3.14159;
+
+//   static getDiameter(radius) {
+//     return 2 * radius;
+//   }
+//   static getCircumference(radius) {
+//     return 2 * this.PI * radius;
+//   }
+//   static getArea(radius) {
+//     // return this.PI * Math.pow(radius, 2);
+//     return this.PI * radius * radius;
+//   }
+// }
+// console.log(MathUtil.PI);
+// console.log(MathUtil.getDiameter(10));
+// console.log(MathUtil.getCircumference(10));
+// console.log(MathUtil.getArea(10));
+
+// class User {
+//   static userCount = 0;
+
+//   constructor(username) {
+//     this.username = username;
+//     User.userCount++;
+//   }
+//   static getUserCount() {
+//     console.log(`There are ${User.userCount} users online`);
+//   }
+//   sayHello() {
+//     console.log(`Hello, my username is ${this.username}!`);
+//   }
+// }
+// const user1 = new User("Spongebob");
+// const user2 = new User("Patrick");
+// const user3 = new User("Sandy");
+// user1.sayHello();
+// user2.sayHello();
+// user3.sayHello();
+// console.log(user1.username);
+// console.log(user2.username);
+// console.log(user3.username);
+// console.log(User.userCount);
+// User.getUserCount();
+
+// inheritance = allows a new class to inherit properties and methods from an existing class (parent -> child)
+// helps with code reusability
+
+// class Animal {
+//   alive = true;
+//   eat() {
+//     console.log(`This ${this.name} is eating`);
+//   }
+//   sleep() {
+//     console.log(`This ${this.name} is sleeping`);
+//   }
+// }
+// class Rabbit extends Animal {
+//   name = "rabbit";
+
+//   run() {
+//     console.log(`This ${this.name} is running`);
+//   }
+// }
+// class Fish extends Animal {
+//   name = "fish";
+
+//   swim() {
+//     console.log(`This ${this.name} is swimming`);
+//   }
+// }
+// class Hawk extends Animal {
+//   name = "hawk";
+//   fly() {
+//     console.log(`This ${this.name} is flying`);
+//   }
+// }
+// const rabbit = new Rabbit();
+// const fish = new Fish();
+// const hawk = new Hawk();
+
+// console.log(hawk.alive);
+// hawk.eat();
+// hawk.sleep();
+// hawk.fly();
+
+// super = keyword is used in classes to call the constructor or access the properties and methods of a parent (superclass)
+// this = this object
+// super = the parent
+
+// class Animal {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   move(speed) {
+//     console.log(`${this.name} moves at a speed of ${speed} kmh`);
+//   }
+// }
+// class Rabbit extends Animal {
+//   constructor(name, age, runSpeed) {
+//     super(name, age);
+//     this.runSpeed = runSpeed;
+//   }
+//   run() {
+//     console.log(`This ${this.name} can run`);
+//     super.move(this.runSpeed);
+//   }
+// }
+// class Fish extends Animal {
+//   constructor(name, age, swimSpeed) {
+//     super(name, age);
+//     this.swimSpeed = swimSpeed;
+//   }
+//   swim() {
+//     console.log(`This ${this.name} can swim`);
+//     super.move(this.swimSpeed);
+//   }
+// }
+// class Hawk extends Animal {
+//   constructor(name, age, flySpeed) {
+//     super(name, age);
+//     this.flySpeed = flySpeed;
+//   }
+//   fly() {
+//     console.log(`This ${this.name} can fly`);
+//     super.move(this.flySpeed);
+//   }
+// }
+// const rabbit = new Rabbit("rabbit", 1, 25);
+// const fish = new Fish("fish", 2, 12);
+// const hawk = new Hawk("hawk", 3, 50);
+// console.log(hawk.name);
+// console.log(hawk.age);
+// console.log(hawk.flySpeed);
+// rabbit.run();
+// fish.swim();
+// hawk.fly();
+
+// getter = special method that makes a property readable
+// setter = special method that makes a property readable
+// validate and modify a value when reading/writing a property
+// class Rectangle {
+//   constructor(width, height) {
+//     this.width = width;
+//     this.height = height;
+//   }
+//   set width(newWidth) {
+//     if (newWidth > 0) {
+//       this._width = newWidth;
+//     } else {
+//       console.error("Width must be a positive number");
+//     }
+//   }
+//   set height(newHeight) {
+//     if (newHeight > 0) {
+//       this._height = newHeight;
+//     } else {
+//       console.error("Height must be a positive number");
+//     }
+//   }
+//   get width() {
+//     return `${this._width.toFixed(1)}cm`;
+//   }
+//   get height() {
+//     return `${this._height.toFixed(1)}cm`;
+//   }
+//   get area() {
+//     return `${(this._width * this._height).toFixed(1)}cm^2`;
+//   }
+// }
+// const rectangle = new Rectangle(3, 4);
+// rectangle.width = 5;
+// rectangle.height = 6;
+// console.log(rectangle.width);
+// console.log(rectangle.height);
+// console.log(rectangle.area);
+
+// class Person {
+//   constructor(firstName, lastName, age) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//   }
+
+//   set firstName(newFirstName) {
+//     if (typeof newFirstName === "string" && newFirstName.length > 0) {
+//       this._firstName = newFirstName;
+//     } else {
+//       console.error("First name must be a non-empty string");
+//     }
+//   }
+//   set lastName(newLastName) {
+//     if (typeof newLastName === "string" && newLastName.length > 0) {
+//       this._lastName = newLastName;
+//     } else {
+//       console.error("Last name must be a non-empty string");
+//     }
+//   }
+//   set age(newAge) {
+//     if (typeof newAge === "number" && newAge >= 0) {
+//       this._age = newAge;
+//     } else {
+//       console.error("Age must be a non-negative number");
+//     }
+//   }
+//   get firstName() {
+//     return this._firstName;
+//   }
+//   get lastName() {
+//     return this._lastName;
+//   }
+//   get fullName() {
+//     return this._firstName + " " + this._lastName;
+//   }
+//   get age() {
+//     return this._age;
+//   }
+// }
+// const person = new Person("Spongebob", "Squarepants", 30);
+// console.log(person.firstName);
+// console.log(person.lastName);
+// console.log(person.fullName);
+// console.log(person.age);
+
+// destructuring = extract values from arrays and objects, then assign them to variables in a convenient way
+// [] = for array destructuring
+// {} = for object destructuring
+
+// Example 1
+// swap value of two variables
+// let a = 1;
+// let b = 2;
+// [a, b] = [b, a];
+// console.log(a);
+// console.log(b);
+
+// Example 2
+// swap 2 elements in an array
+// const colors = ["red", "green", "blue", "yellow", "black"];
+// console.log(colors);
+// [colors[0], colors[4]] = [colors[4], colors[0]];
+// console.log(colors);
+// Example 3
+// assign array elements to variables
+// const colors = ["red", "green", "blue", "yellow", "black"];
+// const [firstColor, secondColor, thirdColor, ...extraColors] = colors;
+// console.log(firstColor);
+// console.log(secondColor);
+// console.log(thirdColor);
+// console.log(extraColors);
+// Example 4
+// Extract values from objects
+// const person1 = {
+//   firstName: "Spongebob",
+//   lastName: "Squarepants",
+//   age: 30,
+//   job: "Cook",
+// };
+// const person2 = {
+//   firstName: "Patrick",
+//   lastName: "Star",
+//   age: 34,
+// };
+// const { firstName, lastName, age, job = "Unemployed" } = person2;
+// console.log(firstName);
+// console.log(lastName);
+// console.log(age);
+// console.log(job);
+// Example 5
+// Destructure in function parameters
+// function displayPerson({ firstName, lastName, age, job = "Unemployed" }) {
+//   console.log(`name: ${firstName} ${lastName}	`);
+//   console.log(`age: ${age}  `);
+//   console.log(`job: ${job}  `);
+// }
+// const person1 = {
+//   firstName: "Spongebob",
+//   lastName: "Squarepants",
+//   age: 30,
+//   job: "Cook",
+// };
+// const person2 = {
+//   firstName: "Patrick",
+//   lastName: "Star",
+//   age: 34,
+// };
+// displayPerson(person1);
+
+// nest objects = Objects inside of other Objects.
+// Allows you to represent more complex data structures
+// Child Object is enclosed by a Parent Object
+// Person{Address{}},ContactInfo{}}
+// ShoppingCart{Keyboard{},Mouse{},Monitor{}}
+// const person = {
+//   fullName: "Spongebob Squarepants",
+//   age: 30,
+//   isStudent: true,
+//   hobbies: ["karate", "jellyfishing", "cooking"],
+//   address: {
+//     street: "124 Conch St.",
+//     city: "Bikini Bottom",
+//     country: "Int.Water",
+//   },
+// };
+// console.log(person.fullName);
+// console.log(person.age);
+// console.log(person.isStudent);
+// console.log(person.hobbies[2]);
+// console.log(person.address.city);
+// for (const property in person.address) {
+//   console.log(person.address[property]);
+// }
+
+// class Person {
+//   constructor(name, age, ...address) {
+//     this.name = name;
+//     this.age = age;
+//     this.address = new Address(...address);
+//   }
+// }
+
+// class Address {
+//   constructor(street, city, country) {
+//     this.street = street;
+//     this.city = city;
+//     this.country = country;
+//   }
+// }
+// const person1 = new Person(
+//   "Spongebob",
+//   30,
+//   "124 Conch St.",
+//   "Bikini Bottom",
+//   "Int. Waters"
+// );
+// const person2 = new Person(
+//   "Patrick",
+//   34,
+//   "128 Conch St.",
+//   "Bikini Bottom",
+//   "Int. Waters"
+// );
+// const person3 = new Person(
+//   "Squidward",
+//   39,
+//   "126 Conch St.",
+//   "Bikini Bottom",
+//   "Int. Waters"
+// );
+// console.log(person3.address.street);
+
+// Working with arrays of objects
+
+// const fruits = [ // reuse for all examples
+//   { name: "apple", color: "red", calories: 95 },
+//   { name: "orange", color: "orange", calories: 45 },
+//   { name: "banana", color: "yellow", calories: 110 },
+//   { name: "coconut", color: "white", calories: 157 },
+//   { name: "pineapple", color: "yellow", calories: 37 },
+// ];
+// console.log(fruits[1].calories);
+// fruits.push({ name: "grapes", color: "purple", calories: 62 });
+// fruits.pop();
+// fruits.splice(1, 2);
+// fruits.forEach((fruit) => console.log(fruit.name));
+// const fruitNames = fruits.map((fruit) => fruit.name);
+// const fruitColors = fruits.map((fruit) => fruit.color);
+// const fruitCalories = fruits.map((fruit) => fruit.calories);
+// console.log(fruitNames);
+// console.log(fruitColors);
+// console.log(fruitCalories);
+// const yellowFruits = fruits.filter((fruit) => fruit.color === "yellow");
+// const lowCalFruits = fruits.filter((fruit) => fruit.calories < 100);
+// const highCalFruits = fruits.filter((fruit) => fruit.calories >= 100);
+// console.log(yellowFruits);
+// console.log(lowCalFruits);
+// console.log(highCalFruits);
+// const maxFruit = fruits.reduce((max, fruit) =>
+//   fruit.calories > max.calories ? fruit : max
+// );
+// const minFruit = fruits.reduce((min, fruit) =>
+//   fruit.calories < min.calories ? fruit : min
+// );
+// console.log(maxFruit);
+// console.log(minFruit);
+
+// sort() = method used to sort elements of an array in place.
+// Sorts elements as strings in lexicographic order, not alphabetical
+// Lexicographic = (alphabet + numbers + symbols) as strings
+// let fruits = ["apple", "orange", "banana", "coconut", "pineapple"];
+// fruits.sort();
+// console.log(fruits);
+// let numbers = [10, 8, 3, 6, 5, 7, 4, 2, 9, 1];
+// numbers.sort((a, b) => a - b);
+// numbers.sort((a, b) => b - a); //reverse order
+// console.log(numbers);
+
+// const people = [
+//   { name: "Spongebob", age: 30, gpa: 3.0 },
+//   { name: "Patrick", age: 28, gpa: 1.5 },
+//   { name: "Squidward", age: 45, gpa: 2.5 },
+//   { name: "Sandy", age: 24, gpa: 4.0 },
+// ];
+// // people.sort((a, b) => a.name - b.name);
+// // people.sort((a, b) => b.age - a.age); //reverse order
+// people.sort((a, b) => a.name.localeCompare(b.name)); //for strings
+// console.log(people);
+
+// Shuffling the elements of an array
+// const cards = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+// cards.sort(() => Math.random() - 0.5); //one way to shuffle, not the recommended way
+// shuffle(cards);
+// console.log(cards);
+// function shuffle(array) {
+//   for (let i = array.length - 1; i > 0; i--) {
+//     const random = Math.floor(Math.random() * (i + 1));
+//     [array[i], array[random]] = [array[random], array[i]];
+//   }
+// }
+// Date objects = Objects that contain values that represent dates and times.
+// These date objects can be changed and formatted
+// Date constructor = year,month,day,hour,minute,second,millisecond
+// const date = new Date(0);
+// const date = new Date();
+// const year = date.getFullYear();
+// const month = date.getMonth() + 1;
+// const day = date.getDate();
+// const hour = date.getHours();
+// const minute = date.getMinutes();
+// const second = date.getSeconds();
+// const millisecond = date.getMilliseconds();
+// const dayOfWeek = date.getDay();
+// console.log(year);
+// console.log(month);
+// console.log(day);
+// console.log(hour);
+// console.log(minute);
+// console.log(second);
+// console.log(millisecond);
+// console.log(dayOfWeek);
+
+// const date = new Date();
+// date.setFullYear(2030);
+// date.setMonth(1);
+// date.setDate(2);
+// date.setHours(3);
+// date.setMinutes(4);
+// console.log(date);
+
+// const date1 = new Date("2023-12-31");
+// const date2 = new Date("2024-01-01");
+// if (date2 > date1) {
+//   console.log("Happy new year");
+// }
+
+// closure = A function defined inside of another function, the inner function has access to the variables and scope of the outer function.
+// Allow for private variables and state maintenance.
+// Used frequently in Js Frameworks : React, Vue, Angular
+// function outer() {
+//   let message = "Hello";
+//   function inner() {
+//     console.log(message);
+//   }
+//   inner();
+// }
+// message = "Goodbye"; //won't work
+// outer();
+
+// function createCounter() {
+//   let count = 0;
+//   function increment() {
+//     count++;
+//     console.log(`Count increased to ${count}`);
+//   }
+//   function getCount() {
+//     return count;
+//   }
+//   return { increment, getCount };
+// }
+// const counter = createCounter();
+// counter.increment();
+// counter.increment();
+// console.log(`The current count is ${counter.getCount()}`);
+
+// function createGame() {
+//   let score = 0;
+//   function increaseScore(points) {
+//     score += points;
+//     console.log(`+${points} points`);
+//   }
+//   function decreaseScore(points) {
+//     score -= points;
+//     console.log(`-${points} points`);
+//   }
+//   function getScore() {
+//     return score;
+//   }
+//   return { increaseScore, decreaseScore, getScore };
+// }
+// const game = createGame();
+// game.increaseScore(5);
+// game.decreaseScore(10);
+// console.log(`The final score is ${game.getScore()}points`);
+
+// setTimeout() = function in JavaScript that allows you to schedule the execution of a function after an amount of time (in milliseconds)
+// Times are approximate (varies based on the workload of the Javascript runtime environment).
+// setTimeout(callback,delay);
+// function sayHello() {
+//   window.alert("Hello");
+// }
+// setTimeout(sayHello, 3000);
+// setTimeout(function () {
+//   window.alert("Hello");
+// }, 3000);
+// setTimeout(() => window.alert("Hello"), 3000);
+
+// clearTimeout(TimeoutID) = can cancel a timeout before it triggers
+// const timeoutId = setTimeout(() => window.alert("Hello"), 3000);
+// clearTimeout(timeoutId);
+
+// let timeoutId;
+// function startTimer() {
+//   timeoutId = setTimeout(() => window.alert("Hello"), 3000);
+//   console.log("Started timer");
+// }
+// function clearTimer() {
+//   clearTimeout(timeoutId);
+//   console.log("Cleared timer");
+// }
