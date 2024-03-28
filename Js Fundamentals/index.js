@@ -1584,3 +1584,140 @@
 //   clearTimeout(timeoutId);
 //   console.log("Cleared timer");
 // }
+
+// ES6 Module = An external file that contains reusable coide that can be imported into other JavaScript files.
+// Write reusable code for many different apps.
+// Can contain variables, classes, functions ... and more.
+// Introduced as part of ECMAScript 2015 update
+// import { PI, getCircumference, getArea, getVolume } from "./mathUtil.js";
+// console.log(PI);
+// const circumference = getCircumference(10);
+// const area = getArea(10);
+// const volume = getVolume(10);
+// console.log(`${circumference.toFixed(2)} cm`);
+// console.log(`${area.toFixed(2)} cm^2`);
+// console.log(`${volume.toFixed(2)} cm^3`);
+
+// synchronous = Executes line by line consecutively in a sequential manner.
+// Code that waits for an operation to complete
+// asynchronous = Allows multiple operations ot be performed concurrently without waiting.
+// Doesnt block the execution flow and allows the program to continue
+// (I/O operations, network requests, fetching data)
+// Handled with: Callbacks, Promises, Async/Await
+
+// Synchronous example
+// console.log("Task 1");
+// console.log("Task 2");
+// console.log("Task 3");
+
+// Asynchronous example
+// function funct1(callback) {
+//   setTimeout(() => {
+//     console.log("Task 1");
+//     callback();
+//   }, 3000);
+// }
+// function funct2() {
+//   console.log("Task 2");
+//   console.log("Task 3");
+//   console.log("Task 4");
+// }
+// funct1(funct2);
+
+// Error = An object that is created to represent a problem that occurs
+// Occur often with user input or enstablishing a connection
+// try { } = Encloses code that might potentially cause an error
+// catch { } = Catch and handle any thrown Errors from try { }
+// finally { } = (optional) Always executes. Used mostly for clean up. ex. close files, close connections, release resources
+// try {
+//   console.log(x);
+//   // NETWORK ERRORS
+//   // PROMISE REJECTION
+//   // SECURITY ERRORS
+// } catch (error) {
+//   console.error(error);
+// } finally {
+//   // CLOSE FILES
+//   // CLOSE CONNECTIONS
+//   // RELEASE RESOURCES
+//   console.log("This always executes");
+// }
+// console.log("Goodbye");
+
+// try {
+//   const dividend = Number(window.prompt("Enter a dividend: "));
+//   const divisor = Number(window.prompt("Enter a divisor: "));
+
+//   if (divisor == 0) {
+//     throw new Error("You can't divise by zero");
+//   }
+//   if (isNaN(dividend) || isNaN(divisor)) {
+//     throw new Error("Values must be a number");
+//   }
+//   const result = dividend / divisor;
+//   console.log(result);
+// } catch (error) {
+//   console.error(error);
+// }
+// console.log("Goodbye");
+
+// DOME = DOCUMENT OBJECT MODEL
+// Object{} that represents the page you see in the web browser and provides you with an API to interact with it.
+// Web browser constructs the DOM when it loads an HTML document and structures all the elements in a tree-like representation
+// Javascript can access the DOM to dynamically change the content, structure and style of a web page.
+// const username = " John";
+// const welcomeMsg = document.getElementById("welcome-msg");
+// welcomeMsg.textContent += username === "" ? `Guest` : username;
+
+// element selectors = Methods used to target and manipulate HTML elements
+// They allow you to select one or multiple HTML elements from the DOM
+
+// 1) document.getElementById()       // ELEMENTS OR NULL
+// 2) document.getElementsByClassName()// HTML COLLECTION
+// 3) document.getElementByTagName()  // HTML COLLECTION
+// 4) document.querySelector()        // ELEMENTS OR NULL
+// 5) document.querySelectorAll()     // NODELIST
+
+// const myHeading = document.getElementById("my-heading");
+// myHeading.style.backgroundColor = "yellow";
+// myHeading.style.textAlign = "center";
+// console.log(myHeading);
+
+// const fruits = document.getElementsByClassName("fruits");
+// fruits[1].style.backgroundColor = "yellow";
+// for (let fruit of fruits) {
+//   fruit.style.backgroundColor = "yellow";
+// }
+// fruits.forEach(); //HTML COLLECTIONS dont have a forEach() method
+// Array.from(fruits).forEach((fruit) => {
+//   fruit.style.backgroundColor = "yellow";
+// });
+
+// const h4Elements = document.getElementsByTagName("h4");
+// const liElements = document.getElementsByTagName("li");
+
+// h4Elements[1].style.backgroundColor = "yellow";
+// for (let h4Element of h4Elements) {
+//   h4Element.style.backgroundColor = "yellow";
+// }
+// for (let liElement of liElements) {
+//   liElement.style.backgroundColor = "green";
+// }
+
+// Array.from(h4Elements).forEach((h4Element) => {
+//   h4Element.style.backgroundColor = "yellow";
+// });
+// Array.from(liElements).forEach((liElement) => {
+//   liElement.style.backgroundColor = "green";
+// });
+
+// const element = document.querySelector("ul");
+// element.style.backgroundColor = "yellow";
+
+// const foods = document.querySelectorAll("li");
+// foods[0].style.backgroundColor = "yellow";
+// console.log(foods); // querySelectorAll returns a nodelist
+
+// foods.forEach((food) => {
+//   food.style.backgroundColor = "yellow";
+// });
