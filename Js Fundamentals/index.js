@@ -1721,3 +1721,115 @@
 // foods.forEach((food) => {
 //   food.style.backgroundColor = "yellow";
 // });
+
+// DOM Navigation = The process if nagivating through the structure of an HTML document using JavaScript
+
+// .firstElementChild
+// .lastElementChild
+// .nextElementSibling
+// .previousElementSibling
+// .parentElement
+// .children
+
+// ------- .firstElementChild -------
+// const element = document.getElementById("fruits");
+// const firstChild = element.firstElementChild;
+// firstChild.style.backgroundColor = "yellow";
+
+// const ulElements = document.querySelectorAll("ul");
+// ulElements.forEach((ulElement) => {
+//   const firstChild = ulElement.firstElementChild;
+//   firstChild.style.backgroundColor = "yellow";
+// });
+
+// ------- .lastElementChild -------
+// const element = document.getElementById("fruits");
+// const lastChild = element.lastElementChild;
+// lastChild.style.backgroundColor = "yellow";
+
+// const ulElements = document.querySelectorAll("ul");
+// ulElements.forEach((ulElement) => {
+//   const lastChild = ulElement.lastElementChild;
+//   lastChild.style.backgroundColor = "yellow";
+// });
+
+// ------- .nextElementSibling -------
+// const element = document.getElementById("apple");
+// const nextSibling = element.nextElementSibling;
+// nextSibling.style.backgroundColor = "yellow";
+
+// ------- .previousElementSibling -------
+// const element = document.getElementById("pie");
+// const prevSibling = element.previousElementSibling;
+// prevSibling.style.backgroundColor = "yellow";
+
+// ------- .parentElement -------
+// const element = document.getElementById("apple");
+// const parent = element.parentElement;
+// parent.style.backgroundColor = "yellow";
+
+// ------- .children -------
+// const element = document.getElementById("fruits");
+// const children = element.children; //returns an HTML collection
+// // Array.from(children).forEach((child) => {
+// //   child.style.backgroundColor = "yellow";
+// // });
+// children[1].style.backgroundColor = "yellow";
+
+// How to add and change HTML elements using JavaScript
+// STEP 1 - Create the element
+// const newH1 = document.createElement("h1");
+// // STEP 2 - Add attributes/properties
+// newH1.textContent = "I like pizza";
+// newH1.id = "myH1";
+// newH1.style.color = "red";
+// newH1.style.textAlign = "center";
+
+// STEP 3 - Append element to DOM
+// document.body.append(newListItem);
+// document.body.prepend(newListItem);
+// document.getElementById("apple").appendChild(newListItem); // makes it the last child
+// document.getElementById("apple").prepend(newListItem); // makes it the first child
+// document.body.append(newH1);
+// document.getElementById("box1").appendChild(newH1);
+// document.getElementById("box1").prepend(newH1);
+// const box2 = document.getElementById("box2");
+// document.body.insertBefore(newH1, box2);
+// const boxes = document.querySelectorAll(".box");
+// document.body.insertBefore(newH1, boxes[1]);
+
+// Remove HTML element
+// document.body.removeChild(newH1);
+
+// example
+// const newListItem = document.createElement("li");
+// newListItem.textContent = "coconut";
+// newListItem.id = "coconut";
+// newListItem.style.fontWeight = "bold";
+// newListItem.backgroundColor = "green";
+// document.getElementById("fruits").append(newListItem);
+// const orange = document.getElementById("orange");
+// document.getElementById("fruits").insertBefore(newListItem, orange);
+
+// const listItems = document.querySelectorAll("#fruits li");
+// document.getElementById("fruits").insertBefore(newListItem, listItems[1]);
+
+// eventListener = Listen for a specific event to create interactive web pages.
+// events: click, mouseover, mouseout
+// .addEventListener(event, callbacks, functions, arrows functions )
+// const myBox = document.getElementById("myBox");
+// const myButton = document.getElementById("myButton");
+
+// myBox.style.backgroundColor = "lightblue";
+// myButton.addEventListener("click", (event) => {
+//   myBox.style.backgroundColor = "purple";
+//   myBox.textContent = "Ouch! 😭";
+// });
+// myButton.addEventListener("mouseover", (event) => {
+//   myBox.style.backgroundColor = "yellow";
+//   myBox.textContent = "Don't do it! 😱";
+// });
+// myButton.addEventListener("mouseout", (event) => {
+//   myBox.style.backgroundColor = "lightblue";
+//   myBox.textContent = "Click me again 😎";
+// });
