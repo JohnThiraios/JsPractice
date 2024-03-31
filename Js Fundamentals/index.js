@@ -1833,3 +1833,58 @@
 //   myBox.style.backgroundColor = "lightblue";
 //   myBox.textContent = "Click me again 😎";
 // });
+
+// Key events
+// eventListener = Listen for specific events to create interactive web pages
+// events like keydown, keyup etc
+//(keypress = do not use, its incompatible with most web browsers)
+// document.addEventListener(event, callbacks);
+
+// const myBox = document.getElementById("myBox");
+// const moveAmount = 25;
+// let x = 0;
+// let y = 0;
+// document.addEventListener("keydown", (event) => {
+//   myBox.textContent = "😁";
+//   myBox.style.backgroundColor = "orange";
+// });
+// document.addEventListener("keyup", (event) => {
+//   myBox.textContent = "😊";
+//   myBox.style.backgroundColor = "lightblue";
+// });
+// document.addEventListener("keydown", (event) => {
+//   event.preventDefault();
+
+//   if (event.key.startsWith("Arrow")) {
+//     switch (event.key) {
+//       case "ArrowUp":
+//         y -= moveAmount;
+//         break;
+//       case "ArrowDown":
+//         y += moveAmount;
+//         break;
+//       case "ArrowLeft":
+//         x -= moveAmount;
+//         break;
+//       case "ArrowRight":
+//         x += moveAmount;
+//         break;
+//     }
+//     myBox.style.top = `${y}px`;
+//     myBox.style.left = `${x}px`;
+//   }
+// });
+
+// Showing and Hiding HTML elements using Javascript
+const myButton = document.getElementById("myButton");
+const myImg = document.getElementById("myImg");
+
+myButton.addEventListener("click", (event) => {
+  if (myImg.style.visibility === "hidden") {
+    myImg.style.visibility = "visible";
+    myButton.textContent = "Hide";
+  } else {
+    myImg.style.visibility = "hidden";
+    myButton.textContent = "Show";
+  }
+});
