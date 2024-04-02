@@ -1,3 +1,22 @@
-#myButton {
-  font-size: 2rem;
+.myButtons {
+  font-size: 4rem;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.enabled {
+  background-color: hsl(200, 100%, 50%);
+  color: #fff;
+}
+
+.hover {
+  background-color: hsl(200, 100%, 40%);
+  box-shadow: 0 0 10px hsl(0, 0%, 20%);
+}
+
+.disabled {
+  background-color: hsl(0, 0%, 60%);
+  color: hsl(0, 0%, 80%);
 }

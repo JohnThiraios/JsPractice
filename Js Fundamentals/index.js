@@ -1875,16 +1875,132 @@
 //   }
 // });
 
-// Showing and Hiding HTML elements using Javascript
-const myButton = document.getElementById("myButton");
-const myImg = document.getElementById("myImg");
+// // Showing and Hiding HTML elements using Javascript
+// const myButton = document.getElementById("myButton");
+// const myImg = document.getElementById("myImg");
 
-myButton.addEventListener("click", (event) => {
-  if (myImg.style.visibility === "hidden") {
-    myImg.style.visibility = "visible";
-    myButton.textContent = "Hide";
-  } else {
-    myImg.style.visibility = "hidden";
-    myButton.textContent = "Show";
-  }
-});
+// myButton.addEventListener("click", (event) => {
+//   if (myImg.style.visibility === "hidden") {
+//     myImg.style.visibility = "visible";
+//     myButton.textContent = "Hide";
+//   } else {
+//     myImg.style.visibility = "hidden";
+//     myButton.textContent = "Show";
+//   }
+// });
+
+// NodeList = A static collection of HTML elements by (id, class, element)
+// Can be created by using querySelectorAll().
+// Similar to an array, but no (map, fileter, reduce)
+// NodeList won't update to automatically reflect changes to the DOM
+
+// // ADD HTML/CSS PROPERTIES
+// let buttons = document.querySelectorAll(".myButtons");
+// buttons.forEach((button) => {
+//   button.style.backgroundColor = "green";
+//   button.textContent += "😁";
+// });
+
+// // CLICK event listener
+// let buttons = document.querySelectorAll(".myButtons");
+// buttons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     event.target.style.backgroundColor = "tomato";
+//   });
+// });
+
+// // MOUSEOVER + MOUSEOUT event listener
+// let buttons = document.querySelectorAll(".myButtons");
+// buttons.forEach((button) => {
+//   button.addEventListener("mouseover", (event) => {
+//     event.target.style.backgroundColor = "hsl(240, 100%, 40%)";
+//   });
+// });
+// buttons.forEach((button) => {
+//   button.addEventListener("mouseout", (event) => {
+//     event.target.style.backgroundColor = "hsl(240, 100%, 60%)";
+//   });
+// });
+
+// // ADD AN ELEMENT
+// let buttons = document.querySelectorAll(".myButtons");
+// const newButton = document.createElement("button"); //STEP 1 - CREATE
+// newButton.textContent = "Button 5"; //STEP 2 - CUSTOMIZE
+// newButton.classList = "myButtons"; //STEP 2 - CUSTOMIZE
+// document.body.appendChild(newButton); //STEP 3 - ADD TO DOM
+// // console.log(buttons); // Created button is not on the nodelist
+// buttons = document.querySelectorAll(".myButtons");
+// console.log(buttons); // Now its added
+
+// // // REMOVE ELEMENT
+// let buttons = document.querySelectorAll(".myButtons");
+// buttons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     event.target.remove();
+//     buttons = document.querySelectorAll(".myButtons");
+//     console.log(buttons);
+//   });
+// });
+
+// classList = Element property in Javascript used to interact with an element's list of classes (CCS Classes)
+// Allows you to make reusable classes for many elements across your webpage.
+
+// add()
+// remove()
+// toggle(Remove if present, Add if not)
+// replace(oldClass, newClass)
+// contains()
+
+// const myH1 = document.getElementById("myH1");
+// const myButton = document.getElementById("myButton");
+// myButton.classList.add("enabled");
+// // myButton.classList.remove("enabled");
+// // myButton.addEventListener("mouseover", (event) => {
+// //   event.target.classList.toggle("hover");
+// // });
+// // myButton.addEventListener("mouseout", (event) => {
+// //   event.target.classList.toggle("hover");
+// // });
+// myH1.classList.add("enabled");
+// myButton.classList.add("enabled");
+// myButton.addEventListener("click", (event) => {
+//   if (event.target.classList.contains("disabled")) {
+//     event.target.textContent += "🙄";
+//   } else {
+//     event.target.classList.replace("enabled", "disabled");
+//   }
+// });
+// myH1.classList.add("enabled");
+// myH1.classList.add("enabled");
+// myH1.addEventListener("click", (event) => {
+//   if (event.target.classList.contains("disabled")) {
+//     event.target.textContent += "🙄";
+//   } else {
+//     event.target.classList.replace("enabled", "disabled");
+//   }
+// });
+
+// let buttons = document.querySelectorAll(".myButtons");
+// buttons.forEach((button) => {
+//   button.classList.add("enabled");
+// });
+// buttons.forEach((button) => {
+//   button.addEventListener("mouseover", (event) => {
+//     event.target.classList.toggle("hover");
+//   });
+// });
+// buttons.forEach((button) => {
+//   button.addEventListener("mouseout", (event) => {
+//     event.target.classList.toggle("hover");
+//   });
+// });
+// buttons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     if (event.target.classList.contains("disabled")) {
+//       event.target.textContent += "🙄";
+//     } else {
+//       event.target.classList.replace("enabled", "disabled");
+//     }
+//     event.target.classList.replace("enabled", "disabled");
+//   });
+// });
