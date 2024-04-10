@@ -2004,3 +2004,229 @@
 //     event.target.classList.replace("enabled", "disabled");
 //   });
 // });
+
+// Callback Hell = Situation in Javascript where callbacks are nested within other allbacks to the degree where the code is difficult to read.
+// Old pattern to handle asynchronous functioons.
+// Use Promises + async/await to avoid Callback Hell
+
+// Example of Callback Hell
+// function task1(callback) {
+//   setTimeout(() => {
+//     console.log("Task 1 Complete");
+//     callback();
+//   }, 2000);
+// }
+// function task2(callback) {
+//   setTimeout(() => {
+//     console.log("Task 2 Complete");
+//     callback();
+//   }, 1000);
+// }
+// function task3(callback) {
+//   setTimeout(() => {
+//     console.log("Task 3 Complete");
+//     callback();
+//   }, 3000);
+// }
+// function task4(callback) {
+//   setTimeout(() => {
+//     console.log("Task 4 Complete");
+//     callback();
+//   }, 1500);
+// }
+// task1(() => {
+//   task2(() => {
+//     task3(() => {
+//       task4(() => {
+//         console.log("All tasks are complete");
+//       });
+//     });
+//   });
+// });
+
+// Promise = An Object that manages asynchronous operations.
+// Wrap a Promise Object around {asynchronous code}
+// "I promise to return a value"
+// PENDING -> RESOLVED or REJECTED
+// new Promise((resolve, reject) => {asynchronous code})
+
+// DO THESE CHORES IN ORDER
+// 1. Walk the dog
+// 2. Clean the kitchen
+// 3. Take out the trash
+
+// function walkDog() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const dogwalked = true;
+//       if (dogwalked) {
+//         resolve("You walk the dog 🐕");
+//       } else {
+//         reject("You didn't walk the dog 🐕");
+//       }
+//     }, 1500);
+//   });
+// }
+
+// function cleanKitchen() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const kitchenCleaned = true;
+//       if (kitchenCleaned) {
+//         resolve("You Clean the kitchen 🧼");
+//       } else {
+//         reject("You didn't Clean the kitchen 🧼");
+//       }
+//     }, 2500);
+//   });
+// }
+// function takeOutTrash() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const trashTakenOut = true;
+//       if (trashTakenOut) {
+//         resolve("You take out the trash ♻");
+//       } else {
+//         reject("You didn't take out the trash ♻");
+//       }
+//     }, 1000);
+//   });
+// }
+
+// walkDog()
+//   .then((value) => {
+//     console.log(value);
+//     return cleanKitchen();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     return takeOutTrash();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     console.log("You finished all the chores");
+//   })
+//   .catch((error) => console.error(error));
+
+// Async/Await
+// Async = makes a function return a promise
+// Await = makes an async function wait for a promise
+
+// Allows you to write asynchronous code in a synchronous manner
+// Async doesn't have resolve or reject parameters
+// Everything after Await is placed in an event queue
+
+// function walkDog() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const dogwalked = true;
+//       if (dogwalked) {
+//         resolve("You walk the dog 🐕");
+//       } else {
+//         reject("You didn't walk the dog 🐕");
+//       }
+//     }, 1500);
+//   });
+// }
+
+// function cleanKitchen() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const kitchenCleaned = true;
+//       if (kitchenCleaned) {
+//         resolve("You Clean the kitchen 🧼");
+//       } else {
+//         reject("You didn't Clean the kitchen 🧼");
+//       }
+//     }, 2500);
+//   });
+// }
+// function takeOutTrash() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const trashTakenOut = true;
+//       if (trashTakenOut) {
+//         resolve("You take out the trash ♻");
+//       } else {
+//         reject("You didn't take out the trash ♻");
+//       }
+//     }, 1000);
+//   });
+// }
+
+// async function doChores() {
+//   try {
+//     const walkDogResult = await walkDog();
+//     console.log(walkDogResult);
+
+//     const cleanKitchenResult = await cleanKitchen();
+//     console.log(cleanKitchenResult);
+
+//     const takeOutTrashResult = await takeOutTrash();
+//     console.log(takeOutTrashResult);
+
+//     console.log("You finished all the chores");
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+// doChores();
+
+// JSON = (JavaScript Object Notation) date-interchange format
+// Used for exchanging data between a server and a web application
+// JSON files {key: value} OR [value1, value2, value3...]
+
+// JSON.stringify() = converts a JS object to a JSON string.
+// JSON.parse() = converts a JSON string to a JS object
+
+// const jsonNames = `["Spongebob", "Patrick", "Squidward", "Sandy"]`;
+// const jsonPerson = `{
+//   name: "Spongebob",
+//   age: 30,
+//   isEmployed: true,
+//   hobbies: ["Jellyfishing", "Karate", "Cooking"],
+// }`;
+// const jsonPeople = `[
+//   {
+//     name: "Spongebob",
+//     age: 30,
+//     isEmployed: true,
+//   },
+//   {
+//     name: "Patrick",
+//     age: 34,
+//     isEmployed: false,
+//   },
+//   {
+//     name: "Squidward",
+//     age: 45,
+//     isEmployed: true,
+//   },
+//   {
+//     name: "Sandy",
+//     age: 23,
+//     isEmployed: false,
+//   },
+// ]`;
+// const parsedData = JSON.parse(jsonNames);
+// console.log(parsedData);
+
+// fetch("people.json")
+//   .then((response) => response.json())
+//   .then((values) => values.forEach((value) => console.log(value.name)))
+//   .catch((error) => console.error(error));
+
+// fetch = Function used for making HTTP requests to fetch resources.
+// (JSON style data, images, files, etc.)
+// Simplifies asynchronous data fetchiung in Javascript and is used for interacting with APIs to retrieve and send data asynchronously over the web.
+// fetch(url, {options})
+
+// fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error("Could not fetch resource");
+//     }
+//     return response.json();
+//   })
+//   .then((data) => console.log(data))
+//   .catch((error) => console.error(error));
