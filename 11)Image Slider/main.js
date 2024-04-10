@@ -10,12 +10,14 @@ function intializeSlider() {
     intervalId = setInterval(nextSlide, 5000);
   }
 }
-function showSlide() {
-  // if (index >= slides.length) {
-  //   slideIndex = 0;
-  // } else if (index < 0) {
-  //   slideIndex = slides.length - 1;
-  // }
+function showSlide(index) {
+  console.log(slides.length);
+  console.log(slideIndex);
+  if (index >= slides.length) {
+    slideIndex = 0;
+  } else if (index < 0) {
+    slideIndex = slides.length - 1;
+  }
 
   slides.forEach((slide) => {
     slide.classList.remove("displaySlide");
@@ -33,5 +35,4 @@ function nextSlide() {
   clearInterval(intervalId);
   slideIndex++;
   showSlide(slideIndex);
-  console.log(slideIndex);
 }

@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .slider {
   position: relative;
   width: 100%;
@@ -8,6 +13,7 @@
 .slider img {
   width: 100%;
   display: none;
+  height: 100vh;
 }
 
 img.displaySlide {
