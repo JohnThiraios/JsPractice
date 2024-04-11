@@ -109,19 +109,19 @@ function changeDirection(event) {
   const goingLeft = xVelocity == -unitSize;
 
   switch (true) {
-    case keyPress == LEFT || (keyPress === A && !goingRight):
+    case (keyPress == LEFT && !goingRight) || (keyPress === A && !goingRight):
       xVelocity = -unitSize;
       yVelocity = 0;
       break;
-    case keyPress == RIGHT || (keyPress === D && !goingLeft):
+    case (keyPress == RIGHT && !goingLeft) || (keyPress === D && !goingLeft):
       xVelocity = unitSize;
       yVelocity = 0;
       break;
-    case keyPress == UP || (keyPress === W && !goingDown):
+    case (keyPress == UP && !goingDown) || (keyPress === W && !goingDown):
       xVelocity = 0;
       yVelocity = -unitSize;
       break;
-    case keyPress == DOWN || (keyPress === S && !goingUp):
+    case (keyPress == DOWN && !goingUp) || (keyPress === S && !goingUp):
       xVelocity = 0;
       yVelocity = unitSize;
       break;
@@ -151,7 +151,7 @@ function checkGameOver() {
 }
 
 function displayGameOver() {
-  ctx.font = "60px MV Boli";
+  ctx.font = "90px MV Boli";
   ctx.fillStyle = "red";
   ctx.textAlign = "center";
   ctx.fillText("Game Over", gameWidth / 2, gameHeight / 2);

@@ -2230,3 +2230,15 @@
 //   })
 //   .then((data) => console.log(data))
 //   .catch((error) => console.error(error));
+
+// COOKIES
+// cookie = a small text file stored on your computer used to remember information about the user
+// saved in name=value pairs
+
+// document.cookie =
+//   "firstName=Spongebob; expires=Sun,1 January 2030 12:00:00 GMT; path=/";
+// document.cookie =
+//   "lastName=Squarepants; expires=Sun,1 January 2020 12:00:00 GMT; path=/";
+// console.log(document.cookie);
+
+// setCookie("email", "sponge@gmail.com", 365);
