@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image.x-icon" hred="./assets/favicon.png" />
+    <title>SpeedTyper</title>
+  </head>
+  <body class="body">
+    <div class="page">
+      <header class="header page_header">
+        <nav class="nav">
+          <div class="nav_logo">
+            <img src="./assets/keyboard.svg" alt="" class="nav_keyboard" />
+            <h1 class="nav_name">TempoType</h1>
+          </div>
+          <div class="nav_link-section">
+            <p class="nav_link nav_link_leaderboard">Leaderboard</p>
+            <p class="nav_link nav_link_about">About</p>
+            <button class="nav_link nav_settings"></button>
+            <button class="nav_link nav_login">Login</button>
+          </div>
+        </nav>
+      </header>
+
+      <main class="main page_main">
+        <section class="tiles">
+          <div class="tile tile_wpm">
+            <h2 class="tile_heading">WPM :</h2>
+            <span class="tile_value">42</span>
+          </div>
+          <div class="tile tile_accuracy">
+            <h2 class="tile_heading">Accuracy:</h2>
+            <span class="tile_value">88%</span>
+          </div>
+          <div class="tile tile_time">
+            <h2 class="tile_heading">Time :</h2>
+            <span class="tile_value">52s</span>
+          </div>
+        </section>
+        <section class="text-area">
+          <input type="text" class="text-area_input" />
+          <div class="text-area_wrapper">
+            <div class="text-area_text"></div>
+          </div>
+        </section>
+        <section class="keyboard-area">
+          <div class="keyboard">
+            <div class="keyboard_row">
+              <div id="q" class="key"><span class="key__text">q</span></div>
+              <div id="w" class="key"><span class="key__text">w</span></div>
+              <div id="e" class="key"><span class="key__text">e</span></div>
+              <div id="r" class="key"><span class="key__text">r</span></div>
+              <div id="t" class="key"><span class="key__text">t</span></div>
+              <div id="y" class="key"><span class="key__text">y</span></div>
+              <div id="u" class="key"><span class="key__text">u</span></div>
+              <div id="i" class="key"><span class="key__text">i</span></div>
+              <div id="o" class="key"><span class="key__text">o</span></div>
+              <div id="p" class="key"><span class="key__text">p</span></div>
+              <div id="[" class="key"><span class="key__text">[</span></div>
+              <div id="]" class="key"><span class="key__text">]</span></div>
+            </div>
+            <div class="keyboard_row">
+              <div id="a" class="key"><span class="key__text">a</span></div>
+              <div id="s" class="key"><span class="key__text">s</span></div>
+              <div id="d" class="key"><span class="key__text">d</span></div>
+              <div id="f" class="key"><span class="key__text">f</span></div>
+              <div id="g" class="key"><span class="key__text">g</span></div>
+              <div id="h" class="key"><span class="key__text">h</span></div>
+              <div id="j" class="key"><span class="key__text">j</span></div>
+              <div id="k" class="key"><span class="key__text">k</span></div>
+              <div id="l" class="key"><span class="key__text">l</span></div>
+              <div id=";" class="key"><span class="key__text">;</span></div>
+              <div id="'" class="key"><span class="key__text">'</span></div>
+            </div>
+            <div class="keyboard_row">
+              <div id="z" class="key"><span class="key__text">z</span></div>
+              <div id="x" class="key"><span class="key__text">x</span></div>
+              <div id="c" class="key"><span class="key__text">c</span></div>
+              <div id="v" class="key"><span class="key__text">v</span></div>
+              <div id="b" class="key"><span class="key__text">b</span></div>
+              <div id="n" class="key"><span class="key__text">n</span></div>
+              <div id="m" class="key"><span class="key__text">m</span></div>
+              <div id="," class="key"><span class="key__text">,</span></div>
+              <div id="." class="key"><span class="key__text">.</span></div>
+              <div id="/" class="key"><span class="key__text">/</span></div>
+            </div>
+            <div class="keyboard_row">
+              <div id="space" class="key key_space">
+                <span class="key__text">space</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer page_footer"></footer>
+    </div>
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>
