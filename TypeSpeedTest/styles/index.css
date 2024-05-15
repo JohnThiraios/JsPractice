@@ -9,7 +9,6 @@
 @import url("./textArea.css");
 @import url("./keyboard.css");
 @import url("./key.css");
-
-@import url("./.css");
-@import url("./.css");
-@import url("./.css");
+@import url("./reset.css");
+@import url("./word.css");
+@import url("./letter.css");
