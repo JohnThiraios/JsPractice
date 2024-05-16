@@ -66,7 +66,7 @@ export {
   validInputKeys,
   resetButton,
   paragraphs,
-  ingoredkeys,
+  ignoredkeys,
   keys,
   punctuationOrSpace,
 };
