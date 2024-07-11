@@ -3,12 +3,12 @@ import Key from "./Key.js";
 
 export default class Keyboard {
   constructor() {
-    this.keyObjs = [];
+    this.keyObjs = {};
     this.createKeys();
   }
   createKeys() {
     Array.from(keys).forEach((key) => {
-      const keyText = key.querySector(".key__text").textContent.trim();
+      const keyText = key.querySelector(".key_text").textContent.trim();
       this.keyObjs[keyText] = new Key(key);
     });
   }

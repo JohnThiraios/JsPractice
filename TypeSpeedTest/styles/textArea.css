@@ -12,16 +12,17 @@
   opacity: 0;
 }
 
-.text-area_wrapper {
-  flex-basis: 900px;
-  box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 15px;
-}
-
 .text-area_text {
   padding: 25px;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
+}
+
+.text-area_wrapper {
+  flex-basis: 900px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  transition: height 2s ease-in-out;
 }

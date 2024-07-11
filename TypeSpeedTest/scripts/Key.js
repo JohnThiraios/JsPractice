@@ -1,7 +1,7 @@
 export default class Key {
   constructor(keyElement) {
     this.keyElement = keyElement;
-    this.keyletter = keyElement.querySelector(".key__text").textContent;
+    this.keyLetter = keyElement.querySelector(".key_text").textContent;
   }
   triggerKey(correctKey, key) {
     if (correctKey) {

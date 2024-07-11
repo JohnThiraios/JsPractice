@@ -1,7 +1,7 @@
 export default class Word {
   constructor(word) {
     this.word = word;
-    this.wordElement = this.getWordTemplate(word);
+    this.wordElement = this.getWordTemplate();
     this.letterObjs = [];
   }
   getWordTemplate() {
@@ -10,8 +10,8 @@ export default class Word {
       .content.querySelector(".word")
       .cloneNode(true);
   }
-  insertLetter(letterObj) {
-    this.letterObjs.push(letterObj);
-    this.wordElement.append(letterObj.letterElement);
+  insertLetter(letter) {
+    this.letterObjs.push(letter);
+    this.wordElement.append(letter.letterElement);
   }
 }

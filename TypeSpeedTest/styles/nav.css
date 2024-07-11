@@ -54,6 +54,7 @@
 }
 
 .nav_settings:hover {
+  cursor: pointer;
   transform: rotate(45deg);
   opacity: 0.7;
   background-image: url(../assets/settings-hover.svg);
@@ -67,6 +68,8 @@
   font-family: inherit;
   font-weight: inherit;
   transition: all 0.25s ease-in-out;
+
+  /* transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out; */
 }
 .nav_login:hover {
   color: #fff;

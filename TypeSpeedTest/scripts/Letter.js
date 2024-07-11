@@ -7,14 +7,14 @@ export default class Letter {
   getLetterTemplate() {
     return document
       .querySelector("#letter-template")
-      .context.querySelector(".letter")
+      .content.querySelector(".letter")
       .cloneNode(true);
   }
 
-  getCursorTemplete() {
+  getCursorTemplate() {
     return document
       .querySelector("#cursor-template")
-      .context.querySelector(".letter_cursor")
+      .content.querySelector(".letter_cursor")
       .cloneNode(true);
   }
   setCorrect() {
@@ -29,11 +29,11 @@ export default class Letter {
     return this.letterElement.classList.contains("letter_correct");
   }
   addCursor() {
-    const cursor = this.getCursorTemplete();
+    const cursor = this.getCursorTemplate();
     this.letterElement.append(cursor);
   }
   removeCursor() {
-    this.letterElement.children(0).remove;
+    this.letterElement.children[0].remove();
   }
   setUntyped() {
     this.letterElement.classList.remove("letter_correct");

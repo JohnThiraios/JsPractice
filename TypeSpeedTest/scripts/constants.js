@@ -1,6 +1,6 @@
 const wpmTile = document.querySelector(".tile_wpm");
-const accuracyTile = document.querySelector(".tile_accuracye");
-const timeTile = document.querySelector(".tile_time");
+const accuracyTile = document.querySelector(".tile_accuracy");
+const timeTile = document.querySelector(".tile_time-remaining");
 
 const textAreaInput = document.querySelector(".text-area_input");
 const textAreaText = document.querySelector(".text-area_text");
@@ -14,9 +14,9 @@ const word = document.querySelector("#word-template").content;
 const validInputKeys =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz[];',./";
 
-const ignoredKeys = ["Shift", "Capslock"];
+const ignoredkeys = ["Shift", "Capslock"];
 
-const punctuationOrSpace = ",.;";
+const punctuationOrSpace = ",.; ";
 
 const paragraphs = [
   `Polar bears are big, white bears that live in the cold parts of the world, like the North Pole.`,
